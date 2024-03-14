@@ -37,3 +37,12 @@ inline Vec3 operator+(const Vec3&a, const Vec3& b){ return Vector3Add(a, b); }
 inline Vec3 operator-(const Vec3&a, const Vec3& b){ return Vector3Subtract(a, b); }
 inline Vec3 operator*(const Vec3&a, float f){ return Vector3Scale(a, f); }
 inline Vec3 operator*(float f, const Vec3&a){ return Vector3Scale(a, f); }
+
+//Element wise division for vec3
+inline Vec3 operator/(const Vec3& v, const Vec3& w){
+    Vec3 ans;
+    ans.x = v.x / w.x;
+    ans.y = v.y / w.y;
+    ans.z = v.z / w.z;
+    return ans;
+}

@@ -5,8 +5,8 @@ SRC_DIR=src
 INCLUDE_DIR=include
 BUILD_DIR=build
 
-CFLAGS = -Wall -Werror -g -std=c++20 -I$(INCLUDE_DIR)
-LIBS = -lraylib
+CFLAGS = -Wall -Werror -g -std=c++20 -I$(INCLUDE_DIR) -I/usr/local/include/bullet
+LIBS = -lraylib -lBulletDynamics -lBulletCollision -lLinearMath
 
 SRC_FILES = $(wildcard $(SRC_DIR)/*.cpp)
 OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(SRC_FILES))

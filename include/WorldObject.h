@@ -1,20 +1,32 @@
 #pragma once
 
-#include "Resources.h"
 #include <raylib.h>
+#include "Resources.h"
+#include "Collisions.h"
 
-struct AABB{
-    Vector3 min;
-    Vector3 max;
+struct Rotation{
+    float angle;
+    Vector3 axis;
+};
+
+struct GTransform{
+    Vector3 position;
+    Vector3 scale;
+    Vector3 rotationAxis;
+    float rotationAngle;
 };
 
 struct WorldObj{
     WorldObj(Vector3 position, ModelType modelId);
 
     ModelType mModelId;
+
     Vector3 mPosition;
+    Vector3 mScale;
+    Rotation mRotation;
 
     void draw(Camera3D& camera);
     void drawBoundingBox(Camera3D& camera, Color color);
-    AABB getAABB() const;
+    BoundingBox getAABB() const;
+    Matrix getTransform() const;
 };

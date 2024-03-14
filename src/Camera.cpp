@@ -6,17 +6,19 @@
 #include <stdio.h>
 
 #include <raylib.h>
+#define DEFAULT_CAMERA_POSITION (Vector3){-11.57, 8.66, 10.00}
+#define DEFAULT_PITCH -35.0f
+#define DEFAULT_YAW -41.0f
 
 FreeCamera::FreeCamera(){
     mWorldUp = (Vector3){0.0, 1.0, 0.0};
     mUp = mWorldUp;
-    mPosition = (Vector3){0.0, 1.0, 0.0};
+    mPosition = DEFAULT_CAMERA_POSITION;
     mFront = (Vector3){0.0, 0.0, -1.0};
     mRight = Vector3Zero();
-
     mSpeed = DEFAULT_CAMERA_SPEED;
-    mYaw = -90.0f;
-    mPitch = 0.0f;
+    mYaw = DEFAULT_YAW;
+    mPitch= DEFAULT_PITCH;
     mSens = 0.1f;
     mFirstTime = true;
     mPrevMousePos = Vector2Zero();

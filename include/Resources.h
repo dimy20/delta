@@ -9,6 +9,9 @@ enum ShaderType{
 
 enum ModelType{
     DONUT,
+    CUBE,
+    TEAPOT,
+    SPHERE,
     NUM_MODELS
 };
 
